@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package proto;
+
+service Stripe {
+  rpc GetCharge(Resource) returns (Charge) {}
+}
+
+message Resource {
+  string id = 1;
+}
+
+message Charge {
+  string id = 1;
+  bool livemode = 2;
+  int64 amount = 3;
+}
